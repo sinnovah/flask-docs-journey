@@ -1,0 +1,1 @@
+# A repository for projects and notes from reading the Flask documentation.
