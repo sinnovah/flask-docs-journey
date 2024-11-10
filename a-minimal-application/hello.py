@@ -1,6 +1,8 @@
 from flask import Flask
 """
+Following the Flask quickstart guide:
 https://flask.palletsprojects.com/en/stable/quickstart/#a-minimal-application
+
 
 This script creates a minimal Flask application. It imports the Flask class
 from the flask module and creates an instance of the Flask class. The __name__
@@ -10,14 +12,14 @@ argument to determine the root path of the application.
 
 The application defines a single route ("/") that returns a simple HTML string
 when accessed. To run this application in the browser on your local machine,
-type "flask --app a-minimal-application/hello run" in the terminal and visit
-http://127.0.0.1:5000 in your browser.
+type/paste "flask --app a-minimal-application/hello run" in the terminal and
+visit http://127.0.0.1:5000 in your browser.
 
 Functions:
     hello_world(): Returns a simple HTML string "<p>Hello, World!</p>".
 Routes:
     /: Visiting the root domain calls the hello_world function and returns
-    sits output.
+    its output.
 """
 
 app = Flask(__name__)
