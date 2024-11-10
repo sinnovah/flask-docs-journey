@@ -1,2 +1,5 @@
 # Ignore the .venv directory
 .venv/
+
+# Ignore the python cache files
+__pycache__/
