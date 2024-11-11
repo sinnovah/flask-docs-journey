@@ -11,9 +11,10 @@ set to the name of the module in which it is used. The Flask class uses this
 argument to determine the root path of the application.
 
 The application defines a single route ("/") that returns a simple HTML string
-when accessed. To run this application in the browser on your local machine,
-type/paste "flask --app a-minimal-application/hello run" in the terminal and
-visit http://127.0.0.1:5000 in your browser.
+when accessed. To run this application in debug mode in the browser on your
+local machine, type/paste "flask --app a-minimal-application/hello run --debug"
+in the terminal and visit http://127.0.0.1:5000 in your browser.
+CTRL+C will stop the server.
 
 Functions:
     hello_world(): Returns a simple HTML string "<p>Hello, World!</p>".
