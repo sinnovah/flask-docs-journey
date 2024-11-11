@@ -10,11 +10,10 @@ variable passed to the Flask class is a Python predefined variable, which is
 set to the name of the module in which it is used. The Flask class uses this
 argument to determine the root path of the application.
 
-The application defines a single route ("/") that returns a simple HTML string
-when accessed. To run this application in debug mode in the browser on your
+To run this application in debug mode in the browser on your
 local machine, type/paste "flask --app a-minimal-application/hello run --debug"
-in the terminal and visit http://127.0.0.1:5000 in your browser.
-CTRL+C will stop the server.
+in the terminal and visit http://127.0.0.1:5000 with the appropriate route in
+your browser. CTRL+C will stop the server.
 
 Functions:
     hello_world(): Returns a simple HTML string "<p>Hello, World!</p>".
@@ -28,4 +27,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
+    """Returns a simple HTML string. Route is the root domain."""
     return "<p>Hello, World!</p>"
