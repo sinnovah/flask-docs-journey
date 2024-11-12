@@ -22,12 +22,18 @@ app = Flask(__name__)
 
 
 @app.route("/")
+def index():
+    """Returns an 'Index' heading. Route is the root domain."""
+    return "<h1>Index</h1>"
+
+
+@app.route("/hello")
 def hello_world():
-    """Returns a simple HTML string. Route is the root domain."""
+    """Returns a simple HTML string. Route is the /hello."""
     return "<p>Hello, World!</p>"
 
 
 @app.route("/<name>")
-def hi(name):
+def escaped(name):
     """Returns a simple HTML string with a variable name escaped."""
-    return f"Hello, {escape(name)}!"
+    return f"<p>Hello, {escape(name)}!</p>"
