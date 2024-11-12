@@ -26,6 +26,13 @@ def index():
     """Returns an 'Index' heading. Route is the root domain."""
     return "<h1>Index</h1>"
 
+# Converter types:
+# string - (default) accepts any text without a slash
+# int - accepts positive integers
+# float - accepts positive floating point values
+# path - like string but also accepts slashes
+# uuid - accepts UUID strings
+
 
 @app.route("/hello")
 def hello_world():
@@ -33,7 +40,20 @@ def hello_world():
     return "<p>Hello, World!</p>"
 
 
-@app.route("/<name>")
-def escaped(name):
-    """Returns a simple HTML string with a variable name escaped."""
-    return f"<p>Hello, {escape(name)}!</p>"
+@app.route("/user/<string:name>")
+def display_user_profile(name):
+    """Return the user profile with the name escaped.
+    Strings cannot contain slashes."""
+    return f"<p>User {escape(name)}!</p>"
+
+
+@app.route('/path/<path:subpath>')
+def show_subpath(subpath):
+    """show the subpath after /path/ with slashes"""
+    return f'Subpath {escape(subpath)}'
+
+
+@app.route('/post/<int:post_id>')
+def show_post(post_id):
+    """show the post with the given id, the id is an integer"""
+    return f'Post {post_id}'
