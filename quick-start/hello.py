@@ -57,3 +57,29 @@ def show_subpath(subpath):
 def show_post(post_id):
     """show the post with the given id, the id is an integer"""
     return f'Post {post_id}'
+
+# Canonical URLs and trailing slashes information:
+
+
+@app.route('/projects/')
+def projects():
+    """
+    The canonical URL for the projects endpoint has a trailing slash
+    http://127.0.0.1:5000/projects/. It is similar to a folder in a file
+    system. If you access the URL without a trailing slash
+    http://127.0.0.1:5000/projects, Flask redirects you to the canonical URL
+    with the trailing slash (/projects/).
+    """
+    return 'The project page'
+
+
+@app.route('/about')
+def about():
+    """
+    The canonical URL for the about endpoint does not have a trailing slash
+    http://127.0.0.1:5000/about. It is similar to the pathname of a file.
+    Accessing the URL with a trailing slash (http://127.0.0.1:5000/about/)
+    produces a 404 “Not Found” error. This helps keep URLs unique for these
+    resources, which helps search engines avoid indexing the same page twice.
+    """
+    return 'The about page'
